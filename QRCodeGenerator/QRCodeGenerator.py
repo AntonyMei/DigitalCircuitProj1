@@ -53,12 +53,11 @@ def GenerateQRCode(
     # Get image, with color settings
     img = qr.make_image(fill_color = fill_color, back_color = back_color)
     img.save(output_directory + "\\" + output_pic_name)
-    img.show()
 
 def GenerateQRCodeWithBGD(
         data = "Default",
-        version  = None,
-        input_pic_name = "testin.gif",
+        version  = 1,
+        input_pic_name = "input.jpg",
         output_pic_name = "testout.gif"
     ):
 
@@ -75,11 +74,19 @@ def GenerateQRCodeWithBGD(
     return: an gif object of QR
 
     '''
-
+    print(input_pic_name, output_pic_name)
     myqr.run(words = data,
         version = version,
         picture = input_pic_name,
         colorized = True,
         save_name = output_pic_name)
 
-GenerateQRCode(data = "Test123", output_pic_name = "1.png")
+GenerateQRCode(data = "DigitalCircuitProj1",
+ output_directory = "I:\\DigitalCircuit\\test_output",
+ output_pic_name = "plainQR.png")
+GenerateQRCodeWithBGD(data = "DigitalCircuitProj1", version = 10,
+ input_pic_name = "I:\\DigitalCircuit\\test_input\\input1.jpg",
+ output_pic_name = "I:\\DigitalCircuit\\test_output\\jpgBGDQR.png")
+GenerateQRCodeWithBGD(data = "DigitalCircuitProj1", version = 10,
+ input_pic_name = "I:\\DigitalCircuit\\test_input\\input2.gif",
+ output_pic_name = "I:\\DigitalCircuit\\test_output\\gifBGDQR.gif")
