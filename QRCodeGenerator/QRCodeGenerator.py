@@ -1,7 +1,12 @@
+import sys
+import os
 import qrcode
+from MyQR import myqr
 
 def GenerateQRCode(
         data = "Default",
+        output_directory = "I:\\DigitalCircuit",
+        output_pic_name = "test.png",
         version  = None,
         fill_color = "Black",
         back_color = "White",
@@ -10,10 +15,11 @@ def GenerateQRCode(
         box_size = 10
     ):
 
-    ''' Generate QR code
+    ''' Generate a normal QR code image
 
     args:
     data: string to encode into QR code
+    output_pic_name: output file name
     version: controls the size of QR code (a 1 to 40 integer)
             version = 1: 21x21 matrix
             version = None: returns a matrix fitting input size
@@ -41,11 +47,39 @@ def GenerateQRCode(
     )
 
     # add data to QR
-    qr.add_data(data=data)
-    qr.make(fit= True)
+    qr.add_data(data = data)
+    qr.make(fit = True)
 
     # Get image, with color settings
     img = qr.make_image(fill_color = fill_color, back_color = back_color)
-    return img
+    img.save(output_directory + "\\" + output_pic_name)
+    img.show()
 
-GenerateQRCode("Test").show()
+def GenerateQRCodeWithBGD(
+        data = "Default",
+        version  = None,
+        input_pic_name = "testin.gif",
+        output_pic_name = "testout.gif"
+    ):
+
+    ''' Generate QR code
+
+    args:
+    data: string to encode into QR code
+    version: controls the size of QR code (a 1 to 40 integer)
+            version = 1: 21x21 matrix
+            version = None: returns a matrix fitting input size
+    input_pic_name: filename for input picture (Can be .jpg, .png, .gif)
+    output_pic_name: filename for output picture (Can be .jpg, .png, .gif)
+
+    return: an gif object of QR
+
+    '''
+
+    myqr.run(words = data,
+        version = version,
+        picture = input_pic_name,
+        colorized = True,
+        save_name = output_pic_name)
+
+GenerateQRCode(data = "Test123", output_pic_name = "1.png")
