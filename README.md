@@ -20,16 +20,16 @@ Example input can be found in $./test\_input$, output can be found in $./test\_o
 ## Input1
 
 
-<div align=center> ![Input1](./test_input/input1.jpg) </div>
+![Input1](./test_input/input1.jpg)
 
 ## Output1
 
-<div align=center> ![Output1](./test_output/jpgBGDQR.png) </div>
+![Output1](./test_output/jpgBGDQR.png)
 
 ## Input2
 
-<div align=center> ![Input1](./test_input/input2.gif) </div>
+![Input2](./test_input/input2.gif)
 
 ## Output2
 
-<div align=center> ![Output1](./test_output/gifBGDQR.gif) </div>
+![Output2](./test_output/gifBGDQR.gif)
