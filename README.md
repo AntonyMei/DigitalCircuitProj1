@@ -1,2 +1,35 @@
-1. Repo for Proj1 of Digital Circuit
-2. run setup.bat before running this project
+# Introduction
+This is the repository for class project1 of DigitalCircuit 2020, IIIS Tsinghua. This project contains a QR code generator and a QR code decoder written in Python.
+
+Please run $setup.bat$ for environment setup. 
+
+# Usage
+## QRCodeGenerator
+$./QRCodeGenerator/QRCodeGenerator.py$ contains two fuctions for generating QR code. 
+
+$GenerateQRCode()$ can generate plain QR code image given input text. 
+
+$GenerateQRCodeWithBGD()$ can generate QR code with image or gif background given input text. 
+
+## QRDecoder
+$./QRDecoder/QRDecoder.py$ contains $DecodeQR()$ that can decode QR code images or gifs into text.
+
+# Example
+Example input can be found in $./test\_input$, output can be found in $./test\_output$
+
+## Input1
+
+
+<div align=center> ![Input1](./test_input/input1.jpg) </div>
+
+## Output1
+
+<div align=center> ![Output1](./test_output/jpgBGDQR.png) </div>
+
+## Input2
+
+<div align=center> ![Input1](./test_input/input2.gif) </div>
+
+## Output2
+
+<div align=center> ![Output1](./test_output/gifBGDQR.gif) </div>

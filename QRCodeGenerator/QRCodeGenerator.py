@@ -19,6 +19,7 @@ def GenerateQRCode(
 
     args:
     data: string to encode into QR code
+    output_directory: absolute path of output directory
     output_pic_name: output file name
     version: controls the size of QR code (a 1 to 40 integer)
             version = 1: 21x21 matrix
@@ -34,7 +35,7 @@ def GenerateQRCode(
             output will be 23*23
     box_size: number of pixel for each matrix entry (minimal is 4)
 
-    return: an image object of QR
+    return: no return
 
     '''
 
@@ -68,10 +69,12 @@ def GenerateQRCodeWithBGD(
     version: controls the size of QR code (a 1 to 40 integer)
             version = 1: 21x21 matrix
             version = None: returns a matrix fitting input size
-    input_pic_name: filename for input picture (Can be .jpg, .png, .gif)
+    input_pic_name: filename for input picture (Can be .jpg, .png, .gif) 
+        (With absolute path)
     output_pic_name: filename for output picture (Can be .jpg, .png, .gif)
+        (With absolute path)
 
-    return: an gif object of QR
+    return: no return
 
     '''
     print(input_pic_name, output_pic_name)
@@ -87,6 +90,7 @@ GenerateQRCode(data = "DigitalCircuitProj1",
 GenerateQRCodeWithBGD(data = "DigitalCircuitProj1", version = 10,
  input_pic_name = "I:\\DigitalCircuit\\test_input\\input1.jpg",
  output_pic_name = "I:\\DigitalCircuit\\test_output\\jpgBGDQR.png")
+# this is really slow if the gif is big
 GenerateQRCodeWithBGD(data = "DigitalCircuitProj1", version = 10,
  input_pic_name = "I:\\DigitalCircuit\\test_input\\input2.gif",
  output_pic_name = "I:\\DigitalCircuit\\test_output\\gifBGDQR.gif")
